@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Turn a photo into a dark Renaissance portrait inspired by old-school Da Vinci sketches.">
+  <title>Da Vinci Portrait — Your image, reimagined.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-light" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Da Vinci Portrait home">
+      <span class="brand-mark">✦</span>
+      <span class="brand-text"><strong>DA VINCI</strong><em>PORTRAIT</em></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link is-active" href="#create">Create</a>
+      <a class="nav-link" href="#story">How it works</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#about">About</a>
+    </nav>
+    <a class="header-cta" href="#create">Create yours <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="create">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">YOUR PHOTO, REIMAGINED</p>
+        <h1>Make it look<br><span>hand-drawn.</span></h1>
+        <p class="hero-sub">Upload a photo and turn it into a moody Renaissance-style portrait with paper texture, sepia ink and old-master details.</p>
+
+        <div class="creator" id="dropzone">
+          <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+          <button class="upload-panel" id="uploadButton" type="button" aria-label="Choose an image">
+            <span class="upload-icon">⌁</span>
+            <span class="upload-title">Drop your image here</span>
+            <span class="upload-note">or click to browse · PNG, JPG, WEBP · max 10 MB</span>
+          </button>
+          <div class="file-meta" id="fileMeta" hidden>
+            <div class="thumb-wrap"><img id="thumb" alt="Selected image preview"></div>
+            <div><strong id="fileName">Image</strong><span id="fileSize">Ready to render</span></div>
+            <button id="clearFile" class="icon-button" type="button" aria-label="Remove image">×</button>
+          </div>
+          <button class="generate-button" id="generateButton" type="button" disabled>
+            <span>Generate artwork</span><span class="button-arrow">→</span>
+          </button>
+          <p class="status" id="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="hero-stage reveal reveal-delay-2">
+        <div class="stage-glow"></div>
+        <div class="before-frame floating" id="beforeFrame">
+          <span class="frame-label">BEFORE</span>
+          <img id="beforeImage" src="assets/demo-source.jpg" alt="Example photo before transformation">
+        </div>
+        <div class="arrow-bridge" aria-hidden="true">→</div>
+        <div class="art-frame floating-slow" id="artFrame">
+          <span class="frame-label">RENAISSANCE STUDY</span>
+          <div class="canvas-wrap">
+            <img id="demoArt" src="assets/demo-art.jpg" alt="Example Renaissance-style portrait">
+            <canvas id="artCanvas" aria-label="Generated artwork preview"></canvas>
+          </div>
+        </div>
+        <div class="margin-note">OBSERVATION No. 01<br><span>Study of light, line &amp; expression</span></div>
+      </div>
+    </section>
+
+    <section class="intro-strip reveal">
+      <span>NOT A FILTER.</span>
+      <strong>A DIFFERENT WAY<br>TO SEE A FACE.</strong>
+      <span>EST. 2026 · DIGITAL STUDY</span>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="section-number">01</div>
+      <div class="section-main">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>From photograph<br>to <em>study.</em></h2>
+        <div class="steps">
+          <article class="step reveal"><span>01</span><h3>Choose a portrait</h3><p>Use a clear, well-lit image with one main subject.</p></article>
+          <article class="step reveal"><span>02</span><h3>Render the character</h3><p>The browser builds a sepia, ink-and-paper treatment from your image instantly.</p></article>
+          <article class="step reveal"><span>03</span><h3>Save the result</h3><p>Download your finished portrait as a high-quality JPG.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="section-number">02</div>
+      <div class="section-main">
+        <p class="eyebrow">A SMALL GALLERY</p>
+        <div class="gallery-grid">
+          <figure class="gallery-card tall reveal"><img src="assets/demo-art.jpg" alt="Sepia Renaissance portrait study"><figcaption>STUDY / I — PORTRAIT</figcaption></figure>
+          <figure class="gallery-card note-card reveal"><div class="note-lines"></div><p>“The smallest shadow can change the whole expression.”</p><span>— atelier note</span></figure>
+          <figure class="gallery-card reveal"><img src="assets/reference.png" alt="Dark Renaissance visual reference website"><figcaption>VISUAL LANGUAGE / THE ATELIER</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-number">03</div>
+      <div class="section-main about-grid">
+        <div>
+          <p class="eyebrow">ABOUT THE IDEA</p>
+          <h2>Old-world<br><em>texture.</em></h2>
+        </div>
+        <p class="about-copy">Da Vinci Portrait is a playful digital atelier built around one idea: a modern photograph can feel completely different when it is treated like an old study. The visual language is inspired by Renaissance drawing, manuscript paper and the restraint of monochrome ink.</p>
+      </div>
+    </section>
+
+    <section class="final-cta reveal">
+      <div class="cta-rings" aria-hidden="true"></div>
+      <p class="eyebrow">BEGIN YOUR STUDY</p>
+      <h2>Give your photo<br><em>a second life.</em></h2>
+      <a class="header-cta large" href="#create">Create a portrait <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>DA VINCI PORTRAIT</span>
+    <span>MADE FOR THE CURIOUS</span>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
